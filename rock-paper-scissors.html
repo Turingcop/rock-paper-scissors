@@ -1,4 +1,33 @@
 <html>
+<style>
+    #playbutton {
+        padding: 10px;
+        font-size:large;
+        font-family: monospace;
+        font-weight:bolder;
+        border-radius: 5px;
+        border-width: 1;
+        display: flex;
+        width: 300px;
+        justify-content: center;
+    }
+
+    #centerbutton {
+        display: flex;
+        justify-content: center;
+        margin-top: 50%;
+    }
+
+    #jstext {
+        display:flex;
+        justify-content: center;
+        margin-top: 50%;
+    }
+</style>
+<body>
+    <div id="centerbutton">
+<button id="playbutton" onclick="game()">Rock, Paper, Scissors</button> 
+</div>   
 <script>
     //gitconfigtest 2 3
 let pwin = 0;
@@ -46,16 +75,17 @@ let cwin = 0;
     function game() {
   let round = 0; 
   while (round < 5) {
-    console.log(playRound());
+    playRound();
     round++;
   } 
   if (pwin > cwin) {
-    document.write(`Player wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}. ` );
+    document.write(`Player wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
   } else if (pwin < cwin) {
-    document.write(`Computer wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}. `);
+    document.write(`Computer wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
   } else {
-    document.write(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.` );
+    document.write(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
   }
 }
 </script>
+</body>
 </html>
