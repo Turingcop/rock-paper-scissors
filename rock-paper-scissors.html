@@ -1,0 +1,58 @@
+<script>
+let pwin = 0;
+let cwin = 0;
+    function computerPlay() {
+        let hand = ["rock", "paper", "scissors"];
+        let random = Math.floor(Math.random() * hand.length);
+        return hand[random];
+    }
+
+    function playRound() {
+       let playerSelection = prompt("Your move").toLowerCase();
+       let computerSelection = computerPlay();
+       if (computerSelection == playerSelection) {
+           alert("Draw!");
+       }
+       else if (computerSelection == "rock" && playerSelection == "paper") {
+           alert("Player wins!");
+           pwin++;
+       }
+       else if (computerSelection == "paper" && playerSelection == "scissors") {
+           alert("Player wins!");
+           pwin++;
+       }
+       else if (computerSelection == "scissors" && playerSelection == "rock") {
+           alert("Player wins!");
+           pwin++; 
+       }
+       else if (computerSelection == "scissors" && playerSelection == "paper") {
+           alert("Computer wins!");
+           cwin++;
+       }
+       else if (computerSelection == "paper" && playerSelection == "rock") {
+           alert("Computer wins!")
+           cwin++;
+       }
+       else if (computerSelection == "rock" && playerSelection == "scissors") {
+           alert("Computer wins!")
+           cwin++;
+       }
+       else alert("Error")
+       
+    }
+
+    function game() {
+  let round = 0; 
+  while (round < 5) {
+    console.log(playRound());
+    round++;
+  } 
+  if (pwin > cwin) {
+    console.log(`Player wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}. ` );
+  } else if (pwin < cwin) {
+    console.log(`Computer wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}. `);
+  } else {
+    console.log(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.` );
+  }
+}
+</script>
