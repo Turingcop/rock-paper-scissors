@@ -10,29 +10,29 @@
         display: flex;
         width: 300px;
         justify-content: center;
-        :focus {
-    outline: none;
-}
-    }
+           }
 
     #centerbutton {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 50%;
     }
 
-    #jstext {
-        display:flex;
+    #myDiv {
+        display: flex;
         justify-content: center;
-        align-content: center;
-        ;
+        font-size: x-large;
+        font-family: monospace;
+
     }
 </style>
 <body>
     <div id="centerbutton">
 <button id="playbutton" onclick="game()">Rock, Paper, Scissors</button> 
 </div>   
+<div id="myDiv"></div>
+
 <script>
     //gitconfigtest 2 3
 let pwin = 0;
@@ -78,19 +78,31 @@ let cwin = 0;
     }
 
     function game() {
+      
   let round = 0; 
   while (round < 5) {
     playRound();
     round++;
   } 
   if (pwin > cwin) {
-    document.write(`Player wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
-  } else if (pwin < cwin) {
-    document.write(`Computer wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
-  } else {
-    document.write(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
-  }
+    let result = document.createTextNode(`Player wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
+    
+    document.getElementById("myDiv").appendChild(result);
 }
+ else if (pwin < cwin) {
+    let result = document.createTextNode(`Computer wins! Player: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
+    
+    document.getElementById("myDiv").appendChild(result);
+}
+ else {
+    let result = document.createTextNode(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
+    
+    document.getElementById("myDiv").appendChild(result);   
+}
+
+}
+
+
 
 </script>
 </body>
