@@ -5,23 +5,28 @@
         font-size:large;
         font-family: monospace;
         font-weight:bolder;
-        border-radius: 5px;
+        border-radius: 10px;
         border-width: 1;
         display: flex;
         width: 300px;
         justify-content: center;
+        :focus {
+    outline: none;
+}
     }
 
     #centerbutton {
         display: flex;
         justify-content: center;
-        margin-top: 50%;
+        align-items: center;
+        height: 100%;
     }
 
     #jstext {
         display:flex;
         justify-content: center;
-        margin-top: 50%;
+        align-content: center;
+        ;
     }
 </style>
 <body>
@@ -86,6 +91,7 @@ let cwin = 0;
     document.write(`It's a tie. You: ${pwin} - Computer: ${cwin} - Tie: ${5 - pwin - cwin}.`);
   }
 }
+
 </script>
 </body>
 </html>
